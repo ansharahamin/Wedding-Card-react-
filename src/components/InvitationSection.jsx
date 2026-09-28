@@ -1,9 +1,9 @@
-import React from 'react'
+import Hero from './Hero';
 
-const InvitationSection = () => {
+export default function InvitationSection() {
   return (
-    <div></div>
-  )
+    <main className="bg-bg min-h-screen">
+      <Hero />
+    </main>
+  );
 }
-
-export default InvitationSection

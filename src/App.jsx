@@ -1,25 +1,20 @@
-import { useState } from 'react'
+import { useState } from 'react';
+import Cover from './components/WeddingCover';
+import Invitation from './components/InvitationSection';
 
-import './App.css'
-import WeddingCover from './components/WeddingCover'
+export default function App() {
+  const [revealed, setRevealed] = useState(false);
+  const [coverGone, setCoverGone] = useState(false);
 
-function App() {
-const [isOpened, setisOpened] = useState(false)
   return (
-    <div className='wedding-card'>
-  <section className='cover'>
-{isOpened?<InvitationSection/>:<WeddingCover onOpenComplete={()=>{
-  setisOpened(true)
-}}/>}
-  </section>
-  <section className='invitation'>
-
-  </section>
-  <section className='events'>
-
-  </section>
-    </div>
-  )
+    <>
+      {revealed && <Invitation />}
+      {!coverGone && (
+        <Cover
+          onReveal={() => setRevealed(true)}
+          onDone={() => setCoverGone(true)}
+        />
+      )}
+    </>
+  );
 }
-
-export default App
