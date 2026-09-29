@@ -28,6 +28,7 @@ export default function Cover({ onReveal, onDone }) {
     if (revealedRef.current) return;
     if (videoRef.current.currentTime >= REVEAL_AT) {
       revealedRef.current = true;
+      
       onReveal();
       setFading(true);
     }
