@@ -5,7 +5,10 @@ const useCountdown = (targetDate) => {
     useEffect(() => {
       const calculate = ()=>{
         const diff = new Date(targetDate) - new Date()
-        const days = Math.max(Math.ceil(diff/1000 *60 *60*24),0)
+      const days = Math.max(
+  Math.ceil(diff / (1000 * 60 * 60 * 24)),
+  0
+);
         setdaysLeft(days)
       }
     calculate()
